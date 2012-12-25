@@ -1,0 +1,8 @@
+import com.qaautomation.databuilders.folder002.TestFolder002DataBuilder;
+import com.qaautomation.atests.folder002.TestFolder002;
+
+
+        /*  TestFolder002TestDescriptions  ******************************************/
+        else if (TestFolder002.class.equals(theTestClass)) {
+            return new TestFolder002DataBuilder(theTestClass, theTestMethod);
+        }

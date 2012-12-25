@@ -1,0 +1,17 @@
+
+    private void cleanerData_@#$_MethodJavaName_$#@(JXPathContext context, Selenium seleniumLocal, ITestResult result) throws Exception {
+//	seleniumLocal.start();
+//	seleniumLocal.windowMaximize();
+//	seleniumLocal.setSpeed(ConfigurationFactory.getConfigurationFacade().getSeleniumSpeed());
+//
+//    	UserUtil.loginForExistingUser(seleniumLocal, (String) context.getValue("userLogin"), (String) context.getValue("userPassword"));
+//      SsssMenuUtil.navigateTo(seleniumLocal, MenuItem.????);
+//	
+//	....
+//      // production artifacts processing   
+//       if (!SsssSuiteLevel.artifactStorage.removeArtifact(new Artifact(result.getMethod().getMethod(), "brands03EditBrand", null, null))) {
+//            throw new IllegalStateException("Artifact with method = '" + result.getMethod().getMethod().getName() + "' and artifactId=" + "'brands03EditBrand' was not found in ArtifactStorage" +
+//                    "/n it's not possible to remove it");
+//       }
+    }
+

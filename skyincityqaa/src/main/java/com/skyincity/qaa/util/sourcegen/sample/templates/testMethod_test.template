@@ -1,0 +1,41 @@
+  @Test(groups = {"@#$_TestngGroupName_$#@"}, retryAnalyzer = Analyzer.class)  //  ,dependsOnMethods= {""}
+//  @ForProduction
+  public void @#$_MethodJavaName_$#@() throws Exception {
+      JXPathContext context = TestHelper.checkState(selenium);
+
+      Reporter.log("Initialization-start;  " + CommonHelper.getCurrentTime());
+      printDescription(context);
+      Reporter.log("Initialization-done;   " + CommonHelper.getCurrentTime() + "<br/>  ");
+
+      Reporter.log("Step 1 - start;  " + CommonHelper.getCurrentTime());
+      UserUtil.loginForExistingUser(selenium, (String) context.getValue("userLogin"), (String) context.getValue("userPassword"));
+      SsssMenuUtil.navigateTo(selenium, MenuItem.Brands_Enrichment);
+
+      Reporter.log("Step 1 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 2 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 2 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 2 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 2 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 3 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 3 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 4 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 4 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 5 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 5 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 6 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 6 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 7 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 7 - done;  " + CommonHelper.getCurrentTime());
+
+
+      Reporter.log(hjAppraiser.getTestLevelMessageForTestNgReporter());
+  }
+
+

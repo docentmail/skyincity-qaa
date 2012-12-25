@@ -1,0 +1,29 @@
+
+    private void builderData_@#$_MethodJavaName_$#@(JSONObject jsonRez, Selenium seleniumLocal) throws Exception {
+//	   seleniumLocal.start();
+//	   seleniumLocal.windowMaximize();
+//	   seleniumLocal.setSpeed(ConfigurationFactory.getConfigurationFacade().getSeleniumSpeed());
+// 
+//	   UserUtil.loginForExistingUser(seleniumLocal, jsonRez.getString("userLogin"), jsonRez.getString("userPassword"));
+//	   
+//	    ....
+//	    // production artifact registration
+//          String toUpdateBrandName = existingBrand + "_MUST_BE_RENAMED";
+//          Reporter.log("************ WARNING: FOLLOWING DATA MUST BE DELETED OR RENAMED ******************");
+//          Reporter.log("Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status);
+//
+//          log.debug("************ WARNING: FOLLOWING DATA MUST BE DELETED OR RENAMED ******************");
+//          log.debug("Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status);
+//
+//          ErrorReporter.log(jsonRez.getString(CLASS_NAME), jsonRez.getString(METHOD_NAME),
+//                  "Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status);
+//
+//          SsssSuiteLevel.artifactStorage.addArtifact(new Artifact(getTestMethod().getMethod(), "brands03EditBrand",
+//                  "Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status,
+//                  "Please renamed it and check status"));
+//
+//			jsonRez.put("existingBrand",existingBrand);
+//            jsonRez.put("toUpdateBrandName",toUpdateBrandName);
+//            jsonRez.put("status",status);
+//
+    }

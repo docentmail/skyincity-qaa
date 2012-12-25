@@ -1,0 +1,4 @@
+            if (getTestMethod().getMethodName().equals("@#$_MethodJavaName_$#@")) {
+            	builderData_@#$_MethodJavaName_$#@(jsonRez, seleniumLocal);
+            } 
+

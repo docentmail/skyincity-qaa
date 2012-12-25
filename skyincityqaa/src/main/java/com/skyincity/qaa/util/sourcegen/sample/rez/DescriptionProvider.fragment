@@ -1,0 +1,19 @@
+import com.qaautomation.atests.description.TestFolder002TestDescriptions;
+import com.qaautomation.atests.folder002.TestFolder002;
+
+        /*  TestFolder002TestDescriptions ******************************************/
+        else if (TestFolder002.class.equals(theTestClass)) {
+            if (theMethodName.equals("testFolder002Method001")) {
+                description = TestFolder002TestDescriptions.testFolder002Method001();
+            }
+            if (theMethodName.equals("testFolder002Method002")) {
+                description = TestFolder002TestDescriptions.testFolder002Method002();
+            }
+            if (theMethodName.equals("testFolder002Method003")) {
+                description = TestFolder002TestDescriptions.testFolder002Method003();
+            }
+            if (theMethodName.equals("testFolder002Method004")) {
+                description = TestFolder002TestDescriptions.testFolder002Method004();
+            }
+        }
+

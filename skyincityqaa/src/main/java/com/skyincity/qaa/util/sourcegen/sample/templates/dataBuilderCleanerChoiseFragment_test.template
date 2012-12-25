@@ -1,0 +1,4 @@
+			if (isMethodEqual("@#$_MethodJavaName_$#@")) {
+				cleanerData_@#$_MethodJavaName_$#@(context, seleniumLocal, result);
+			}
+

@@ -1,0 +1,11 @@
+
+		} catch (Throwable e) {
+			reportCleanerError(e, seleniumLocal);
+		} finally {
+			SWSeleniumHelper.closeBrowser(seleniumLocal);
+		}
+
+		// }
+	}
+
+// ****************************** build/cleaner methods for concrete tests    **************************************************************************

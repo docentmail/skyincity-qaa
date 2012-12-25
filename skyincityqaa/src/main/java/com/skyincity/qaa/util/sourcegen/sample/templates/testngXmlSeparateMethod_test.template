@@ -1,0 +1,47 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" skipfailedinvocationcounts="false" verbose="1" name="WorkSuite" junit="false" annotations="JDK"
+       data-provider-thread-count="10">
+
+    <listeners>
+        <listener class-name="com.qaautomation.failedtest.FailedTestReporter"/>
+        <listener class-name="com.qaautomation.Ssss.testngdata.SsssProductionAnnotationTransformer"/>
+        <listener class-name="com.qaautomation.joystick.Joystick01TestListener"/>
+        <listener class-name="com.qaautomation.Ssss.testngdata.SsssDataBuilderTestListener"/>
+    </listeners>
+
+    <test name="@#$_TestClassName_$#@" junit="false" annotations="JDK">
+        <groups>
+            <run>
+                <include name="@#$_TestngGroupName_$#@"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.qaautomation.Ssss.atests.SsssSuiteLevel">
+                <methods>
+                    <include name="startJoystic"/>
+                    <include name="stopJoystic"/>
+                    <include name="initializeHumanJobAppraiser"/>
+                    <include name="finalizeHumanJobAppraiser"/>
+                    <include name="checkAndChooseEmailService"/>
+                    <include name="suiteStat"/>
+                    <include name="prepareUploadFolder"/>
+                    <include name="createUsersForProdTests"/>
+                    <include name="appendProductionInfoAboutFailedTest"/>
+                    <include name="detailedErrorsAndWarnings"/>
+                </methods>
+            </class>
+
+
+            <class name="@#$_TestPackage_$#@.@#$_TestClassName_$#@">
+                <methods>
+                    <include name="beforeTest"/>
+                    <include name="afterTest"/>
+                    <include name="@#$_MethodJavaName_$#@"/>
+                </methods>
+            </class>
+
+        </classes>
+
+    </test>
+</suite>

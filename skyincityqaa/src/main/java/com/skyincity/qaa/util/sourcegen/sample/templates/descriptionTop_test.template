@@ -1,0 +1,31 @@
+public static String @#$_MethodJavaName_$#@(){
+        String javaImplementationVersion = "0001";
+        String qcTestId = "@#$_QcCaseId_$#@"; // test ID in Quality Center
+        String qcHierarchyPath = "@#$_QcCasePath_$#@";
+        String bb = "<span style=\"font-weight:bold\">", be = "</span>";
+        String frb = "<span style=\"color:red\">", fre = "</span>";
+        TestImplementationStatusEnum tis = TestImplementationStatusEnum.INTIAL;
+
+        String currentTestDescr =
+         "<table border=1>" +
+			"<body>"+
+				"<tr>"+
+					"<td colspan=3>"+
+						bb+"Quality Center Test Location:"+be+qcHierarchyPath+" <br/> "+
+						bb+"Quality Center Test Id:"+be+qcTestId+
+						bb+"  Java Implementation Version:"+be+javaImplementationVersion+
+						bb+"  Test Implementation Status:"+be+tis+"<br/>"+
+					"</td>"+
+				"</tr>"+
+
+				"<tr style=\"font-weight:bold\">"+
+					"<td>"+
+						"Step"+
+					"</td>"+
+					"<td>"+
+						"Description"+
+					"</td>"+
+					"<td>"+
+						"Expected&nbsp;Result"+
+					"</td>"+
+				"</tr>"+

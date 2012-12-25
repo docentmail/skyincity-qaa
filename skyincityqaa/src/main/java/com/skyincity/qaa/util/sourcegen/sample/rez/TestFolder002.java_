@@ -1,0 +1,235 @@
+package com.qaautomation.atests.folder002;
+
+import com.qaautomation.failedtest.Analyzer;
+import com.qaautomation.framework.testngdata.ForProduction;
+import com.qaautomation.framework.testngdata.IDataBuilder;
+import com.qaautomation.framework.testngdata.TestHelper;
+import com.qaautomation.joystick.Reporter;
+import com.qaautomation.joystick.SeleniumWithJoystick;
+import com.qaautomation.measuring.IHumanJobAppraiser;
+import com.qaautomation.measuring.SeleniumWithTimer;
+import com.qaautomation.measuring.SsssHumanJobAppraiserFactory;
+import com.qaautomation.Ssss.atests.description.SsssDescriptionProvider;
+import com.qaautomation.Ssss.config.ISsssConfigurationFacade;
+import com.qaautomation.Ssss.config.SsssApplicationForTestEnum;
+import com.qaautomation.Ssss.config.SsssConfigurationFactory;
+import com.qaautomation.Ssss.config.UiTraceStoryPicker;
+import com.qaautomation.Ssss.utils.MenuItem;
+import com.qaautomation.Ssss.utils.SsssMenuUtil;
+import com.qaautomation.Ssss.utils.UserUtil;
+import com.qaautomation.Ssss.utils.commonaction.BrandsPageHelper;
+import com.qaautomation.Ssss.utils.commonaction.PaginatorHelper;
+import com.qaautomation.Ssss.utils.commonaction.SsssErrorHelper;
+import com.qaautomation.Ssss.utils.commonaction.sorting.ISortHelper;
+import com.qaautomation.Ssss.utils.commonaction.sorting.ISortOption;
+import com.qaautomation.Ssss.utils.commonaction.sorting.SortHelper;
+import com.qaautomation.utils.CommonHelper;
+import com.qaautomation.utils.ui.SWSeleniumHelper;
+import com.qaautomation.utils.ui.SeleniumHelper;
+import com.qaautomation.utils.ui.dyna.DynaHelper;
+import com.skyincity.qaa.pathfinder.SeleniumWithTracking;
+import com.skyincity.qaa.pathfinder.story.StoryTagsEnm;
+import com.thoughtworks.selenium.DefaultSelenium;
+import com.thoughtworks.selenium.SeleneseTestBase;
+
+import org.apache.commons.jxpath.JXPathContext;
+import org.apache.log4j.Logger;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterGroups;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeGroups;
+import org.testng.annotations.Test;
+
+public class TestFolder002 extends SeleneseTestBase {
+	private static Logger log = Logger.getLogger(TestFolder002.class);
+	private IHumanJobAppraiser hjAppraiser = SsssHumanJobAppraiserFactory.getHumanJobAppraiser();
+
+	@BeforeClass(groups = { "TestGroupName" }, alwaysRun = true)
+	public void beforeTest() throws Exception {
+		ISsssConfigurationFacade icf = SsssConfigurationFactory	.getConfigurationFacade();
+		selenium = new SeleniumWithTracking (new SeleniumWithJoystick(new SeleniumWithTimer(
+				new DefaultSelenium(icf.getServerHost(), icf.getServerPort(),
+						icf.getBrowserStartCommand(), icf.getBrowserURL()),
+				hjAppraiser)), new UiTraceStoryPicker(StoryTagsEnm.TestMethod), icf.isUiTrackingRequired());
+
+		selenium.start();
+		selenium.windowMaximize();
+	}
+
+	@AfterClass(groups = { "TestGroupName" }, alwaysRun = true)
+	public void afterTest() {
+ 	   SWSeleniumHelper.closeBrowser(selenium);
+	}
+
+	private void printDescription(JXPathContext context) {
+		Reporter.log(new SsssDescriptionProvider().getTestDescription(
+				(String) context.getValue(IDataBuilder.METHOD_NAME),
+				this.getClass()));
+	}
+
+  @Test(groups = {"TestGroupName"}, retryAnalyzer = Analyzer.class)  //  ,dependsOnMethods= {""}
+//  @ForProduction
+  public void testFolder002Method001() throws Exception {
+      JXPathContext context = TestHelper.checkState(selenium);
+
+      Reporter.log("Initialization-start;  " + CommonHelper.getCurrentTime());
+      printDescription(context);
+      Reporter.log("Initialization-done;   " + CommonHelper.getCurrentTime() + "<br/>  ");
+
+      Reporter.log("Step 1 - start;  " + CommonHelper.getCurrentTime());
+      UserUtil.loginForExistingUser(selenium, (String) context.getValue("userLogin"), (String) context.getValue("userPassword"));
+      SsssMenuUtil.navigateTo(selenium, MenuItem.Brands_Enrichment);
+
+      Reporter.log("Step 1 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 2 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 2 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 2 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 2 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 3 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 3 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 4 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 4 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 5 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 5 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 6 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 6 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 7 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 7 - done;  " + CommonHelper.getCurrentTime());
+
+
+      Reporter.log(hjAppraiser.getTestLevelMessageForTestNgReporter());
+  }
+
+
+  @Test(groups = {"TestGroupName"}, retryAnalyzer = Analyzer.class)  //  ,dependsOnMethods= {""}
+//  @ForProduction
+  public void testFolder002Method002() throws Exception {
+      JXPathContext context = TestHelper.checkState(selenium);
+
+      Reporter.log("Initialization-start;  " + CommonHelper.getCurrentTime());
+      printDescription(context);
+      Reporter.log("Initialization-done;   " + CommonHelper.getCurrentTime() + "<br/>  ");
+
+      Reporter.log("Step 1 - start;  " + CommonHelper.getCurrentTime());
+      UserUtil.loginForExistingUser(selenium, (String) context.getValue("userLogin"), (String) context.getValue("userPassword"));
+      SsssMenuUtil.navigateTo(selenium, MenuItem.Brands_Enrichment);
+
+      Reporter.log("Step 1 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 2 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 2 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 2 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 2 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 3 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 3 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 4 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 4 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 5 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 5 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 6 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 6 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 7 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 7 - done;  " + CommonHelper.getCurrentTime());
+
+
+      Reporter.log(hjAppraiser.getTestLevelMessageForTestNgReporter());
+  }
+
+
+  @Test(groups = {"TestGroupName"}, retryAnalyzer = Analyzer.class)  //  ,dependsOnMethods= {""}
+//  @ForProduction
+  public void testFolder002Method003() throws Exception {
+      JXPathContext context = TestHelper.checkState(selenium);
+
+      Reporter.log("Initialization-start;  " + CommonHelper.getCurrentTime());
+      printDescription(context);
+      Reporter.log("Initialization-done;   " + CommonHelper.getCurrentTime() + "<br/>  ");
+
+      Reporter.log("Step 1 - start;  " + CommonHelper.getCurrentTime());
+      UserUtil.loginForExistingUser(selenium, (String) context.getValue("userLogin"), (String) context.getValue("userPassword"));
+      SsssMenuUtil.navigateTo(selenium, MenuItem.Brands_Enrichment);
+
+      Reporter.log("Step 1 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 2 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 2 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 2 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 2 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 3 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 3 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 4 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 4 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 5 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 5 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 6 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 6 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 7 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 7 - done;  " + CommonHelper.getCurrentTime());
+
+
+      Reporter.log(hjAppraiser.getTestLevelMessageForTestNgReporter());
+  }
+
+
+  @Test(groups = {"TestGroupName"}, retryAnalyzer = Analyzer.class)  //  ,dependsOnMethods= {""}
+//  @ForProduction
+  public void testFolder002Method004() throws Exception {
+      JXPathContext context = TestHelper.checkState(selenium);
+
+      Reporter.log("Initialization-start;  " + CommonHelper.getCurrentTime());
+      printDescription(context);
+      Reporter.log("Initialization-done;   " + CommonHelper.getCurrentTime() + "<br/>  ");
+
+      Reporter.log("Step 1 - start;  " + CommonHelper.getCurrentTime());
+      UserUtil.loginForExistingUser(selenium, (String) context.getValue("userLogin"), (String) context.getValue("userPassword"));
+      SsssMenuUtil.navigateTo(selenium, MenuItem.Brands_Enrichment);
+
+      Reporter.log("Step 1 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 2 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 2 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 2 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 2 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 3 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 3 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 4 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 4 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 5 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 5 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 6 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 6 - done;  " + CommonHelper.getCurrentTime());
+
+      Reporter.log("Step 7 - start;  " + CommonHelper.getCurrentTime());
+      Reporter.log("Step 7 - done;  " + CommonHelper.getCurrentTime());
+
+
+      Reporter.log(hjAppraiser.getTestLevelMessageForTestNgReporter());
+  }
+
+
+
+}

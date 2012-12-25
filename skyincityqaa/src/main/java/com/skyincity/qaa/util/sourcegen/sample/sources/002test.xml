@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<defects>
+
+<MethodJavaName>testFolder002Method002</MethodJavaName>
+<QcCaseId>3893</QcCaseId>
+<QcCasePath>SSSS =&gt; Regression set =&gt; Folder002  =&gt;  002 Test</QcCasePath>
+<TestngSeparateTestXmlFileName>Folder002Method002</TestngSeparateTestXmlFileName>
+
+<defect>
+<Attachment></Attachment>
+<Step_Name>Step 1</Step_Name><Description>1. Do something
+2.  Do something
+3.   Do something
+4.  Do something</Description><Expected_Result>Check something</Expected_Result>
+</defect>
+
+<defect>
+<Attachment></Attachment>
+
+<Step_Name>Step 2</Step_Name><Description>1. Do something
+2.  Do something
+3.   Do something
+4.  Do something</Description><Expected_Result>Check something</Expected_Result>
+</defect>
+
+<defect>
+<Attachment></Attachment>
+
+<Step_Name>Step 3</Step_Name><Description>1. Do something
+2.  Do something
+3.   Do something
+4.  Do something</Description><Expected_Result>Check something</Expected_Result>
+</defect>
+
+<defect>
+<Attachment></Attachment>
+
+<Step_Name>Step 4</Step_Name><Description>1. Do something
+2.  Do something
+3.   Do something
+4.  Do something</Description><Expected_Result>Check something</Expected_Result>
+</defect>
+
+<defect>
+<Attachment></Attachment>
+
+<Step_Name>Step 5</Step_Name><Description>1. Do something
+2.  Do something
+3.   Do something
+4.  Do something</Description><Expected_Result>Check something</Expected_Result>
+</defect>
+
+</defects>

@@ -1,0 +1,7 @@
+package @#$_DescriptionPackage_$#@;
+
+import com.qaautomation.utils.entity.TestImplementationStatusEnum;
+
+/*  folder: Seller Portal => Smoke Test > Switch account */
+public class @#$_DescriptionClassName_$#@ {
+

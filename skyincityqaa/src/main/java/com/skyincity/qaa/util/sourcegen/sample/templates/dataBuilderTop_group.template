@@ -1,0 +1,84 @@
+package @#$_DataBuilderPackage_$#@;
+
+import com.qaautomation.config.ConfigurationFactory;
+import com.qaautomation.framework.testngdata.DefaultDataBuilder;
+import com.qaautomation.joystick.SeleniumWithJoystick;
+import com.qaautomation.measuring.IHumanJobAppraiser;
+import com.qaautomation.measuring.SeleniumWithTimer;
+import com.qaautomation.measuring.SsssHumanJobAppraiserFactory;
+import com.qaautomation.Ssss.atests.SsssSuiteLevel;
+import com.qaautomation.Ssss.config.ISsssConfigurationFacade;
+import com.qaautomation.Ssss.config.SsssConfigurationFactory;
+import com.qaautomation.Ssss.config.UiTraceStoryPicker;
+import com.qaautomation.Ssss.context.SsssContextFactory;
+import com.qaautomation.Ssss.utils.ErrorReporter;
+import com.qaautomation.Ssss.utils.MenuItem;
+import com.qaautomation.Ssss.utils.SsssMenuUtil;
+import com.qaautomation.Ssss.utils.UserUtil;
+import com.qaautomation.Ssss.utils.commonaction.BrandsPageHelper;
+import com.qaautomation.utils.email.EmailServiceEnum;
+import com.qaautomation.utils.ui.SWSeleniumHelper;
+import com.qaautomation.utils.ui.SeleniumHelper;
+import com.skyincity.qaa.datatracker.Artifact;
+import com.skyincity.qaa.pathfinder.SeleniumWithTracking;
+import com.skyincity.qaa.pathfinder.story.StoryTagsEnm;
+import com.thoughtworks.selenium.DefaultSelenium;
+import com.thoughtworks.selenium.Selenium;
+import net.sf.json.JSONObject;
+import org.apache.commons.jxpath.JXPathContext;
+import org.apache.log4j.Logger;
+import org.testng.ITestNGMethod;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+public class @#$_DataBuilderClass_$#@ extends DefaultDataBuilder {
+
+    private static Logger log = Logger.getLogger(@#$_DataBuilderClass_$#@.class);
+
+
+
+
+    public @#$_DataBuilderClass_$#@(final Class testClass, final ITestNGMethod testMethod) {
+        super(testClass, testMethod);
+    }
+
+    private boolean isMethodEqual(String methodName) {
+        return getTestMethod().getMethodName().equals(methodName);
+    }
+
+    private String getDateTimeSuffixForFieldValue() {
+        return " " + new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(Calendar.getInstance().getTime());
+    }
+
+    
+    @Override
+    public JSONObject buildData() {
+        String emailDomain = null;
+        EmailServiceEnum emailService = null;
+
+        JSONObject jsonRez = buildBasicData();
+        Selenium seleniumLocal=null;
+        
+        try {
+            ISsssConfigurationFacade icf = SsssConfigurationFactory.getConfigurationFacade();
+            emailService = icf.getChosenEmailServise();
+            //  get valid email domain
+            emailDomain = EmailServiceEnum.getDomainByEmailService(emailService);
+
+            // Store superUser
+            jsonRez.put("userLogin", SsssContextFactory.getAdminWithSSSAccount().getEmail());
+            jsonRez.put("userPassword", SsssContextFactory.getAdminWithSSSAccount().getPassword());
+            jsonRez.put("emailDomain", emailDomain);
+
+            IHumanJobAppraiser hjAppraiser = SsssHumanJobAppraiserFactory.getHumanJobAppraiser();
+            seleniumLocal = new SeleniumWithTracking( 
+            		new SeleniumWithJoystick(
+                    new SeleniumWithTimer(new DefaultSelenium(
+                            icf.getServerHost(), icf.getServerPort(), icf.getBrowserStartCommand(), icf.getBrowserURL()),
+                            hjAppraiser)						),
+				new UiTraceStoryPicker(StoryTagsEnm.DataBuilder),icf.isUiTrackingRequired());
+
+

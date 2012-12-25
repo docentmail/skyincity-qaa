@@ -1,0 +1,461 @@
+package com.qaautomation.atests.description;
+
+import com.qaautomation.utils.entity.TestImplementationStatusEnum;
+
+/*  folder: Seller Portal => Smoke Test > Switch account */
+public class TestFolder002TestDescriptions {
+
+public static String testFolder002Method001(){
+        String javaImplementationVersion = "0001";
+        String qcTestId = "3883"; // test ID in Quality Center
+        String qcHierarchyPath = "SSSS => Regression set => Folder002  =>  001 Test";
+        String bb = "<span style=\"font-weight:bold\">", be = "</span>";
+        String frb = "<span style=\"color:red\">", fre = "</span>";
+        TestImplementationStatusEnum tis = TestImplementationStatusEnum.INTIAL;
+
+        String currentTestDescr =
+         "<table border=1>" +
+			"<body>"+
+				"<tr>"+
+					"<td colspan=3>"+
+						bb+"Quality Center Test Location:"+be+qcHierarchyPath+" <br/> "+
+						bb+"Quality Center Test Id:"+be+qcTestId+
+						bb+"  Java Implementation Version:"+be+javaImplementationVersion+
+						bb+"  Test Implementation Status:"+be+tis+"<br/>"+
+					"</td>"+
+				"</tr>"+
+
+				"<tr style=\"font-weight:bold\">"+
+					"<td>"+
+						"Step"+
+					"</td>"+
+					"<td>"+
+						"Description"+
+					"</td>"+
+					"<td>"+
+						"Expected&nbsp;Result"+
+					"</td>"+
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 1"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 2"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 3"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 4"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 5"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+	    "</body>" +
+	    "</table>";
+
+	    return currentTestDescr;
+	}
+
+
+public static String testFolder002Method002(){
+        String javaImplementationVersion = "0001";
+        String qcTestId = "3893"; // test ID in Quality Center
+        String qcHierarchyPath = "SSSS => Regression set => Folder002  =>  002 Test";
+        String bb = "<span style=\"font-weight:bold\">", be = "</span>";
+        String frb = "<span style=\"color:red\">", fre = "</span>";
+        TestImplementationStatusEnum tis = TestImplementationStatusEnum.INTIAL;
+
+        String currentTestDescr =
+         "<table border=1>" +
+			"<body>"+
+				"<tr>"+
+					"<td colspan=3>"+
+						bb+"Quality Center Test Location:"+be+qcHierarchyPath+" <br/> "+
+						bb+"Quality Center Test Id:"+be+qcTestId+
+						bb+"  Java Implementation Version:"+be+javaImplementationVersion+
+						bb+"  Test Implementation Status:"+be+tis+"<br/>"+
+					"</td>"+
+				"</tr>"+
+
+				"<tr style=\"font-weight:bold\">"+
+					"<td>"+
+						"Step"+
+					"</td>"+
+					"<td>"+
+						"Description"+
+					"</td>"+
+					"<td>"+
+						"Expected&nbsp;Result"+
+					"</td>"+
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 1"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 2"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 3"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 4"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 5"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+	    "</body>" +
+	    "</table>";
+
+	    return currentTestDescr;
+	}
+
+
+public static String testFolder002Method003(){
+        String javaImplementationVersion = "0001";
+        String qcTestId = "3803"; // test ID in Quality Center
+        String qcHierarchyPath = "SSSS => Regression set => Folder002  =>  003 Test";
+        String bb = "<span style=\"font-weight:bold\">", be = "</span>";
+        String frb = "<span style=\"color:red\">", fre = "</span>";
+        TestImplementationStatusEnum tis = TestImplementationStatusEnum.INTIAL;
+
+        String currentTestDescr =
+         "<table border=1>" +
+			"<body>"+
+				"<tr>"+
+					"<td colspan=3>"+
+						bb+"Quality Center Test Location:"+be+qcHierarchyPath+" <br/> "+
+						bb+"Quality Center Test Id:"+be+qcTestId+
+						bb+"  Java Implementation Version:"+be+javaImplementationVersion+
+						bb+"  Test Implementation Status:"+be+tis+"<br/>"+
+					"</td>"+
+				"</tr>"+
+
+				"<tr style=\"font-weight:bold\">"+
+					"<td>"+
+						"Step"+
+					"</td>"+
+					"<td>"+
+						"Description"+
+					"</td>"+
+					"<td>"+
+						"Expected&nbsp;Result"+
+					"</td>"+
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 1"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 2"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 3"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 4"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 5"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+	    "</body>" +
+	    "</table>";
+
+	    return currentTestDescr;
+	}
+
+
+public static String testFolder002Method004(){
+        String javaImplementationVersion = "0001";
+        String qcTestId = "3804"; // test ID in Quality Center
+        String qcHierarchyPath = "SSSS => Regression set => Folder002  =>  004 Test";
+        String bb = "<span style=\"font-weight:bold\">", be = "</span>";
+        String frb = "<span style=\"color:red\">", fre = "</span>";
+        TestImplementationStatusEnum tis = TestImplementationStatusEnum.INTIAL;
+
+        String currentTestDescr =
+         "<table border=1>" +
+			"<body>"+
+				"<tr>"+
+					"<td colspan=3>"+
+						bb+"Quality Center Test Location:"+be+qcHierarchyPath+" <br/> "+
+						bb+"Quality Center Test Id:"+be+qcTestId+
+						bb+"  Java Implementation Version:"+be+javaImplementationVersion+
+						bb+"  Test Implementation Status:"+be+tis+"<br/>"+
+					"</td>"+
+				"</tr>"+
+
+				"<tr style=\"font-weight:bold\">"+
+					"<td>"+
+						"Step"+
+					"</td>"+
+					"<td>"+
+						"Description"+
+					"</td>"+
+					"<td>"+
+						"Expected&nbsp;Result"+
+					"</td>"+
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 1"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 2"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 3"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 4"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+				"<tr>"+
+					"<td>"+
+						"Step 5"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"1. Do something<br/>"+
+						" 2.  Do something<br/>"+
+						" 3.   Do something<br/>"+
+						" 4.  Do something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					"<td>"+
+						"Check something"+frb+""+fre+""+frb+""+fre+""+ 
+					"</td>"+
+					
+				"</tr>"+
+	    "</body>" +
+	    "</table>";
+
+	    return currentTestDescr;
+	}
+
+
+
+}

@@ -1,0 +1,8 @@
+import @#$_DataBuilderPackage_$#@.@#$_DataBuilderClass_$#@;
+import @#$_TestPackage_$#@.@#$_TestClassName_$#@;
+
+
+        /*  @#$_DescriptionClassName_$#@  ******************************************/
+        else if (@#$_TestClassName_$#@.class.equals(theTestClass)) {
+            return new @#$_DataBuilderClass_$#@(theTestClass, theTestMethod);
+        }

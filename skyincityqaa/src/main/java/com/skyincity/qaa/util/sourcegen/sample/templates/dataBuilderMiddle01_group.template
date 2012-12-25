@@ -1,0 +1,31 @@
+        } catch (Throwable e) {
+        	reportBuilderError(e, seleniumLocal);
+        } finally {
+			SWSeleniumHelper.closeBrowser(seleniumLocal);
+		}
+        
+
+        jsonRez = includeVerificationData(jsonRez);
+        log.debug("jsonRez=" + jsonRez);
+        return jsonRez;
+    }
+
+	@Override
+	public void clearOutData(JSONObject jsonData, ITestResult result) {
+		log.debug("ProductionBrandsDataBuilder.clearOutData");
+		super.clearOutData(jsonData, result);
+
+		JXPathContext context = JXPathContext.newContext(jsonData);
+		ISsssConfigurationFacade icf = SsssConfigurationFactory.getConfigurationFacade();
+		IHumanJobAppraiser hjAppraiser = SsssHumanJobAppraiserFactory.getHumanJobAppraiser();
+		Selenium seleniumLocal = null;
+
+		try {
+			seleniumLocal = 
+					new SeleniumWithTracking(new SeleniumWithJoystick(
+					       new SeleniumWithTimer(
+					    		   new DefaultSelenium(icf.getServerHost(), icf.getServerPort(),icf.getBrowserStartCommand(), icf.getBrowserURL()),
+							      hjAppraiser)), 
+					       new UiTraceStoryPicker(StoryTagsEnm.DataCleaner), icf.isUiTrackingRequired());
+
+

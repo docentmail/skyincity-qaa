@@ -1,0 +1,3 @@
+            if (theMethodName.equals("@#$_MethodJavaName_$#@")) {
+                description = @#$_DescriptionClassName_$#@.@#$_MethodJavaName_$#@();
+            }

@@ -1,0 +1,343 @@
+package com.qaautomation.databuilders.folder002;
+
+import com.qaautomation.config.ConfigurationFactory;
+import com.qaautomation.framework.testngdata.DefaultDataBuilder;
+import com.qaautomation.joystick.SeleniumWithJoystick;
+import com.qaautomation.measuring.IHumanJobAppraiser;
+import com.qaautomation.measuring.SeleniumWithTimer;
+import com.qaautomation.measuring.SsssHumanJobAppraiserFactory;
+import com.qaautomation.Ssss.atests.SsssSuiteLevel;
+import com.qaautomation.Ssss.config.ISsssConfigurationFacade;
+import com.qaautomation.Ssss.config.SsssConfigurationFactory;
+import com.qaautomation.Ssss.config.UiTraceStoryPicker;
+import com.qaautomation.Ssss.context.SsssContextFactory;
+import com.qaautomation.Ssss.utils.ErrorReporter;
+import com.qaautomation.Ssss.utils.MenuItem;
+import com.qaautomation.Ssss.utils.SsssMenuUtil;
+import com.qaautomation.Ssss.utils.UserUtil;
+import com.qaautomation.Ssss.utils.commonaction.BrandsPageHelper;
+import com.qaautomation.utils.email.EmailServiceEnum;
+import com.qaautomation.utils.ui.SWSeleniumHelper;
+import com.qaautomation.utils.ui.SeleniumHelper;
+import com.skyincity.qaa.datatracker.Artifact;
+import com.skyincity.qaa.pathfinder.SeleniumWithTracking;
+import com.skyincity.qaa.pathfinder.story.StoryTagsEnm;
+import com.thoughtworks.selenium.DefaultSelenium;
+import com.thoughtworks.selenium.Selenium;
+import net.sf.json.JSONObject;
+import org.apache.commons.jxpath.JXPathContext;
+import org.apache.log4j.Logger;
+import org.testng.ITestNGMethod;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+public class TestFolder002DataBuilder extends DefaultDataBuilder {
+
+    private static Logger log = Logger.getLogger(TestFolder002DataBuilder.class);
+
+
+
+
+    public TestFolder002DataBuilder(final Class testClass, final ITestNGMethod testMethod) {
+        super(testClass, testMethod);
+    }
+
+    private boolean isMethodEqual(String methodName) {
+        return getTestMethod().getMethodName().equals(methodName);
+    }
+
+    private String getDateTimeSuffixForFieldValue() {
+        return " " + new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(Calendar.getInstance().getTime());
+    }
+
+    
+    @Override
+    public JSONObject buildData() {
+        String emailDomain = null;
+        EmailServiceEnum emailService = null;
+
+        JSONObject jsonRez = buildBasicData();
+        Selenium seleniumLocal=null;
+        
+        try {
+            ISsssConfigurationFacade icf = SsssConfigurationFactory.getConfigurationFacade();
+            emailService = icf.getChosenEmailServise();
+            //  get valid email domain
+            emailDomain = EmailServiceEnum.getDomainByEmailService(emailService);
+
+            // Store superUser
+            jsonRez.put("userLogin", SsssContextFactory.getAdminWithSSSAccount().getEmail());
+            jsonRez.put("userPassword", SsssContextFactory.getAdminWithSSSAccount().getPassword());
+            jsonRez.put("emailDomain", emailDomain);
+
+            IHumanJobAppraiser hjAppraiser = SsssHumanJobAppraiserFactory.getHumanJobAppraiser();
+            seleniumLocal = new SeleniumWithTracking( 
+            		new SeleniumWithJoystick(
+                    new SeleniumWithTimer(new DefaultSelenium(
+                            icf.getServerHost(), icf.getServerPort(), icf.getBrowserStartCommand(), icf.getBrowserURL()),
+                            hjAppraiser)						),
+				new UiTraceStoryPicker(StoryTagsEnm.DataBuilder),icf.isUiTrackingRequired());
+
+
+            if (getTestMethod().getMethodName().equals("testFolder002Method001")) {
+            	builderData_testFolder002Method001(jsonRez, seleniumLocal);
+            } 
+
+            if (getTestMethod().getMethodName().equals("testFolder002Method002")) {
+            	builderData_testFolder002Method002(jsonRez, seleniumLocal);
+            } 
+
+            if (getTestMethod().getMethodName().equals("testFolder002Method003")) {
+            	builderData_testFolder002Method003(jsonRez, seleniumLocal);
+            } 
+
+            if (getTestMethod().getMethodName().equals("testFolder002Method004")) {
+            	builderData_testFolder002Method004(jsonRez, seleniumLocal);
+            } 
+
+        } catch (Throwable e) {
+        	reportBuilderError(e, seleniumLocal);
+        } finally {
+			SWSeleniumHelper.closeBrowser(seleniumLocal);
+		}
+        
+
+        jsonRez = includeVerificationData(jsonRez);
+        log.debug("jsonRez=" + jsonRez);
+        return jsonRez;
+    }
+
+	@Override
+	public void clearOutData(JSONObject jsonData, ITestResult result) {
+		log.debug("ProductionBrandsDataBuilder.clearOutData");
+		super.clearOutData(jsonData, result);
+
+		JXPathContext context = JXPathContext.newContext(jsonData);
+		ISsssConfigurationFacade icf = SsssConfigurationFactory.getConfigurationFacade();
+		IHumanJobAppraiser hjAppraiser = SsssHumanJobAppraiserFactory.getHumanJobAppraiser();
+		Selenium seleniumLocal = null;
+
+		try {
+			seleniumLocal = 
+					new SeleniumWithTracking(new SeleniumWithJoystick(
+					       new SeleniumWithTimer(
+					    		   new DefaultSelenium(icf.getServerHost(), icf.getServerPort(),icf.getBrowserStartCommand(), icf.getBrowserURL()),
+							      hjAppraiser)), 
+					       new UiTraceStoryPicker(StoryTagsEnm.DataCleaner), icf.isUiTrackingRequired());
+
+
+			if (isMethodEqual("testFolder002Method001")) {
+				cleanerData_testFolder002Method001(context, seleniumLocal, result);
+			}
+
+			if (isMethodEqual("testFolder002Method002")) {
+				cleanerData_testFolder002Method002(context, seleniumLocal, result);
+			}
+
+			if (isMethodEqual("testFolder002Method003")) {
+				cleanerData_testFolder002Method003(context, seleniumLocal, result);
+			}
+
+			if (isMethodEqual("testFolder002Method004")) {
+				cleanerData_testFolder002Method004(context, seleniumLocal, result);
+			}
+
+
+		} catch (Throwable e) {
+			reportCleanerError(e, seleniumLocal);
+		} finally {
+			SWSeleniumHelper.closeBrowser(seleniumLocal);
+		}
+
+		// }
+	}
+
+// ****************************** build/cleaner methods for concrete tests    **************************************************************************
+
+    private void builderData_testFolder002Method001(JSONObject jsonRez, Selenium seleniumLocal) throws Exception {
+//	   seleniumLocal.start();
+//	   seleniumLocal.windowMaximize();
+//	   seleniumLocal.setSpeed(ConfigurationFactory.getConfigurationFacade().getSeleniumSpeed());
+// 
+//	   UserUtil.loginForExistingUser(seleniumLocal, jsonRez.getString("userLogin"), jsonRez.getString("userPassword"));
+//	   
+//	    ....
+//	    // production artifact registration
+//          String toUpdateBrandName = existingBrand + "_MUST_BE_RENAMED";
+//          Reporter.log("************ WARNING: FOLLOWING DATA MUST BE DELETED OR RENAMED ******************");
+//          Reporter.log("Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status);
+//
+//          log.debug("************ WARNING: FOLLOWING DATA MUST BE DELETED OR RENAMED ******************");
+//          log.debug("Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status);
+//
+//          ErrorReporter.log(jsonRez.getString(CLASS_NAME), jsonRez.getString(METHOD_NAME),
+//                  "Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status);
+//
+//          SsssSuiteLevel.artifactStorage.addArtifact(new Artifact(getTestMethod().getMethod(), "brands03EditBrand",
+//                  "Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status,
+//                  "Please renamed it and check status"));
+//
+//			jsonRez.put("existingBrand",existingBrand);
+//            jsonRez.put("toUpdateBrandName",toUpdateBrandName);
+//            jsonRez.put("status",status);
+//
+    }
+
+    private void cleanerData_testFolder002Method001(JXPathContext context, Selenium seleniumLocal, ITestResult result) throws Exception {
+//	seleniumLocal.start();
+//	seleniumLocal.windowMaximize();
+//	seleniumLocal.setSpeed(ConfigurationFactory.getConfigurationFacade().getSeleniumSpeed());
+//
+//    	UserUtil.loginForExistingUser(seleniumLocal, (String) context.getValue("userLogin"), (String) context.getValue("userPassword"));
+//      SsssMenuUtil.navigateTo(seleniumLocal, MenuItem.????);
+//	
+//	....
+//      // production artifacts processing   
+//       if (!SsssSuiteLevel.artifactStorage.removeArtifact(new Artifact(result.getMethod().getMethod(), "brands03EditBrand", null, null))) {
+//            throw new IllegalStateException("Artifact with method = '" + result.getMethod().getMethod().getName() + "' and artifactId=" + "'brands03EditBrand' was not found in ArtifactStorage" +
+//                    "/n it's not possible to remove it");
+//       }
+    }
+
+
+    private void builderData_testFolder002Method002(JSONObject jsonRez, Selenium seleniumLocal) throws Exception {
+//	   seleniumLocal.start();
+//	   seleniumLocal.windowMaximize();
+//	   seleniumLocal.setSpeed(ConfigurationFactory.getConfigurationFacade().getSeleniumSpeed());
+// 
+//	   UserUtil.loginForExistingUser(seleniumLocal, jsonRez.getString("userLogin"), jsonRez.getString("userPassword"));
+//	   
+//	    ....
+//	    // production artifact registration
+//          String toUpdateBrandName = existingBrand + "_MUST_BE_RENAMED";
+//          Reporter.log("************ WARNING: FOLLOWING DATA MUST BE DELETED OR RENAMED ******************");
+//          Reporter.log("Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status);
+//
+//          log.debug("************ WARNING: FOLLOWING DATA MUST BE DELETED OR RENAMED ******************");
+//          log.debug("Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status);
+//
+//          ErrorReporter.log(jsonRez.getString(CLASS_NAME), jsonRez.getString(METHOD_NAME),
+//                  "Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status);
+//
+//          SsssSuiteLevel.artifactStorage.addArtifact(new Artifact(getTestMethod().getMethod(), "brands03EditBrand",
+//                  "Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status,
+//                  "Please renamed it and check status"));
+//
+//			jsonRez.put("existingBrand",existingBrand);
+//            jsonRez.put("toUpdateBrandName",toUpdateBrandName);
+//            jsonRez.put("status",status);
+//
+    }
+
+    private void cleanerData_testFolder002Method002(JXPathContext context, Selenium seleniumLocal, ITestResult result) throws Exception {
+//	seleniumLocal.start();
+//	seleniumLocal.windowMaximize();
+//	seleniumLocal.setSpeed(ConfigurationFactory.getConfigurationFacade().getSeleniumSpeed());
+//
+//    	UserUtil.loginForExistingUser(seleniumLocal, (String) context.getValue("userLogin"), (String) context.getValue("userPassword"));
+//      SsssMenuUtil.navigateTo(seleniumLocal, MenuItem.????);
+//	
+//	....
+//      // production artifacts processing   
+//       if (!SsssSuiteLevel.artifactStorage.removeArtifact(new Artifact(result.getMethod().getMethod(), "brands03EditBrand", null, null))) {
+//            throw new IllegalStateException("Artifact with method = '" + result.getMethod().getMethod().getName() + "' and artifactId=" + "'brands03EditBrand' was not found in ArtifactStorage" +
+//                    "/n it's not possible to remove it");
+//       }
+    }
+
+
+    private void builderData_testFolder002Method003(JSONObject jsonRez, Selenium seleniumLocal) throws Exception {
+//	   seleniumLocal.start();
+//	   seleniumLocal.windowMaximize();
+//	   seleniumLocal.setSpeed(ConfigurationFactory.getConfigurationFacade().getSeleniumSpeed());
+// 
+//	   UserUtil.loginForExistingUser(seleniumLocal, jsonRez.getString("userLogin"), jsonRez.getString("userPassword"));
+//	   
+//	    ....
+//	    // production artifact registration
+//          String toUpdateBrandName = existingBrand + "_MUST_BE_RENAMED";
+//          Reporter.log("************ WARNING: FOLLOWING DATA MUST BE DELETED OR RENAMED ******************");
+//          Reporter.log("Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status);
+//
+//          log.debug("************ WARNING: FOLLOWING DATA MUST BE DELETED OR RENAMED ******************");
+//          log.debug("Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status);
+//
+//          ErrorReporter.log(jsonRez.getString(CLASS_NAME), jsonRez.getString(METHOD_NAME),
+//                  "Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status);
+//
+//          SsssSuiteLevel.artifactStorage.addArtifact(new Artifact(getTestMethod().getMethod(), "brands03EditBrand",
+//                  "Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status,
+//                  "Please renamed it and check status"));
+//
+//			jsonRez.put("existingBrand",existingBrand);
+//            jsonRez.put("toUpdateBrandName",toUpdateBrandName);
+//            jsonRez.put("status",status);
+//
+    }
+
+    private void cleanerData_testFolder002Method003(JXPathContext context, Selenium seleniumLocal, ITestResult result) throws Exception {
+//	seleniumLocal.start();
+//	seleniumLocal.windowMaximize();
+//	seleniumLocal.setSpeed(ConfigurationFactory.getConfigurationFacade().getSeleniumSpeed());
+//
+//    	UserUtil.loginForExistingUser(seleniumLocal, (String) context.getValue("userLogin"), (String) context.getValue("userPassword"));
+//      SsssMenuUtil.navigateTo(seleniumLocal, MenuItem.????);
+//	
+//	....
+//      // production artifacts processing   
+//       if (!SsssSuiteLevel.artifactStorage.removeArtifact(new Artifact(result.getMethod().getMethod(), "brands03EditBrand", null, null))) {
+//            throw new IllegalStateException("Artifact with method = '" + result.getMethod().getMethod().getName() + "' and artifactId=" + "'brands03EditBrand' was not found in ArtifactStorage" +
+//                    "/n it's not possible to remove it");
+//       }
+    }
+
+
+    private void builderData_testFolder002Method004(JSONObject jsonRez, Selenium seleniumLocal) throws Exception {
+//	   seleniumLocal.start();
+//	   seleniumLocal.windowMaximize();
+//	   seleniumLocal.setSpeed(ConfigurationFactory.getConfigurationFacade().getSeleniumSpeed());
+// 
+//	   UserUtil.loginForExistingUser(seleniumLocal, jsonRez.getString("userLogin"), jsonRez.getString("userPassword"));
+//	   
+//	    ....
+//	    // production artifact registration
+//          String toUpdateBrandName = existingBrand + "_MUST_BE_RENAMED";
+//          Reporter.log("************ WARNING: FOLLOWING DATA MUST BE DELETED OR RENAMED ******************");
+//          Reporter.log("Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status);
+//
+//          log.debug("************ WARNING: FOLLOWING DATA MUST BE DELETED OR RENAMED ******************");
+//          log.debug("Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status);
+//
+//          ErrorReporter.log(jsonRez.getString(CLASS_NAME), jsonRez.getString(METHOD_NAME),
+//                  "Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status);
+//
+//          SsssSuiteLevel.artifactStorage.addArtifact(new Artifact(getTestMethod().getMethod(), "brands03EditBrand",
+//                  "Brand with name:\"" + toUpdateBrandName + "\" must be renamed to: \"" + existingBrand + "\" and status:" + status,
+//                  "Please renamed it and check status"));
+//
+//			jsonRez.put("existingBrand",existingBrand);
+//            jsonRez.put("toUpdateBrandName",toUpdateBrandName);
+//            jsonRez.put("status",status);
+//
+    }
+
+    private void cleanerData_testFolder002Method004(JXPathContext context, Selenium seleniumLocal, ITestResult result) throws Exception {
+//	seleniumLocal.start();
+//	seleniumLocal.windowMaximize();
+//	seleniumLocal.setSpeed(ConfigurationFactory.getConfigurationFacade().getSeleniumSpeed());
+//
+//    	UserUtil.loginForExistingUser(seleniumLocal, (String) context.getValue("userLogin"), (String) context.getValue("userPassword"));
+//      SsssMenuUtil.navigateTo(seleniumLocal, MenuItem.????);
+//	
+//	....
+//      // production artifacts processing   
+//       if (!SsssSuiteLevel.artifactStorage.removeArtifact(new Artifact(result.getMethod().getMethod(), "brands03EditBrand", null, null))) {
+//            throw new IllegalStateException("Artifact with method = '" + result.getMethod().getMethod().getName() + "' and artifactId=" + "'brands03EditBrand' was not found in ArtifactStorage" +
+//                    "/n it's not possible to remove it");
+//       }
+    }
+
+}

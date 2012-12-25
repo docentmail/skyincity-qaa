@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<group>
+
+<!-- description -->
+<DescriptionPackage>com.qaautomation.atests.description</DescriptionPackage>
+<DescriptionClassName>TestFolder002TestDescriptions</DescriptionClassName>
+
+<!-- test -->
+<TestPackage>com.qaautomation.atests.folder002</TestPackage>
+<TestClassName>TestFolder002</TestClassName>
+
+<!-- testNg -->
+<TestngGroupName>TestGroupName</TestngGroupName>
+<TestngXmlFileNameForFolder>TestFolder002_All</TestngXmlFileNameForFolder>
+
+
+<!-- dataBuilder -->
+<DataBuilderPackage>com.qaautomation.databuilders.folder002</DataBuilderPackage>
+<DataBuilderClass>TestFolder002DataBuilder</DataBuilderClass>
+
+</group>
+  
