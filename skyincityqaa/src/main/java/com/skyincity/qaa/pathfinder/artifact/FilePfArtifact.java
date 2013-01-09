@@ -108,6 +108,7 @@ public class FilePfArtifact extends BasePfArtifact {
 		}
 
 		StringBuilder sb= new StringBuilder();
+		sb.append("<span style=\"background-color:#cddbff;\">");
 		sb.append("<b><i>** Artifact name=["+name+"], time="+CommonUtil.getTimeAsString(creationTime) +"</i></b>");
 		if (htmlDescription!= null) {
 			sb.append("<br/> description=["+htmlDescription+"]");
@@ -116,6 +117,7 @@ public class FilePfArtifact extends BasePfArtifact {
 		if (fileWebPath!= null) {
 			sb.append("<br/> <a href=\""+fileWebPath+"\"  target=\"_blank\">open file in new window</a> ");
 		}
+		sb.append("</span>");
 		
 		return sb.toString();
 	}

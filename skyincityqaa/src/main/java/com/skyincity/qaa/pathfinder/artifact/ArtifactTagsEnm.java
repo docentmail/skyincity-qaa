@@ -12,6 +12,7 @@ public class ArtifactTagsEnm  {
 
 	public static final ArtifactTagsEnm atUi = new ArtifactTagsEnm("atUi");
 	public static final ArtifactTagsEnm atFile = new ArtifactTagsEnm("atFile");
+	public static final ArtifactTagsEnm atDbQuery = new ArtifactTagsEnm("atDbQuery");	
 	public static final ArtifactTagsEnm atEMail = new ArtifactTagsEnm("atEMail");
 	public static final ArtifactTagsEnm atThrowable = new ArtifactTagsEnm("atThrowable");
 
