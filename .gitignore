@@ -1,0 +1,15 @@
+#### Eclipse
+.project
+.settings
+.classpath
+skyincityqaa/target/
+skyincityqaa/test-output/
+
+#### Idea ###
+.idea
+*.iml
+
+
+####  local
+_pom.xml
+qaa.log

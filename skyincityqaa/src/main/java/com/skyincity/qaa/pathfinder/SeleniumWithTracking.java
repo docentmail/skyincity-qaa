@@ -17,7 +17,6 @@ import org.openqa.selenium.WebDriverBackedSelenium;
 
 import com.skyincity.qaa.pathfinder.artifact.UiPfArtifact;
 import com.skyincity.qaa.pathfinder.snapshot.BasePfSnapshot;
-import com.skyincity.qaa.pathfinder.story.IPfStory;
 import com.skyincity.qaa.util.common.CommonUtil;
 import com.skyincity.qaa.util.selenium.SeleniumUtil;
 import com.skyincity.qaa.webdriver.SeleniumOverWebdriver;
@@ -124,12 +123,12 @@ public class SeleniumWithTracking implements SeleniumOverWebdriver{
 			
 			// check if screenshot/ html was changed and store snapshot (compare with prev screen shot)
 			boolean isScreenChanged=false;
-			if (newScreenshot!=null &&  (strScreen==null || !newScreenshot.equals(strScreen))){
+			if (newScreenshot!=null &&  (strScreen==null || !strScreen.equals(newScreenshot))){
 				isScreenChanged=true;
 			}
 
 			boolean isHtmlChanged=false;
-			if (newHtmlSource !=null && (strHTML==null || !newHtmlSource.equals(strHTML))){
+			if (newHtmlSource !=null && (strHTML==null || !strHTML.equals(newHtmlSource))){
 				isHtmlChanged=true;
 			}
 			
@@ -139,13 +138,7 @@ public class SeleniumWithTracking implements SeleniumOverWebdriver{
 				UiPfArtifact uiArtifact= new UiPfArtifact("uiArtifact", "created by SeleniumWithTracking",
 				newScreenshot,	newHtmlSource,	newPageUrl);
 				BasePfSnapshot snapshot= new BasePfSnapshot ("UI Tracking", "Before Selenium cmd: cmd="+cmd+"; params="+params, uiArtifact);
-				IPfStory pfStory= storyPicker.getStory();
-				if (pfStory==null) {
-					log.warn("Story for snapshot was not defined ",new Exception("Store stacktrace excep[tion"));
-				} else {
-					pfStory.addSnapshot(snapshot);
-				}
-						
+				storyPicker.getStory().addSnapshot(snapshot);
 				
 				strScreen=newScreenshot;
 				strHTML=newHtmlSource;
